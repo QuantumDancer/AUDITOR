@@ -165,6 +165,10 @@ and this project adheres to <a class="reference external" href="https://semver.o
 <h2><a class="reference external" href="https://github.com/alu-schumacher/AUDITOR/compare/v0.3.1...HEAD">Unreleased</a><a class="headerlink" href="#unreleased" title="Link to this heading"></a></h2>
 <section id="breaking-changes">
 <h3>Breaking changes<a class="headerlink" href="#breaking-changes" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>API: Deprecate get_[started/stopped]_since endpoint (#525) (<a class="reference external" href="https://github.com/raghuvar-vijay">&#64;raghuvar-vijay</a>)</p></li>
+<li><p>Apel plugin: Remove <code class="docutils literal notranslate"><span class="pre">site_name_mapping</span></code> config parameter and change structure of <code class="docutils literal notranslate"><span class="pre">sites_to_report</span></code> config parameter (<a class="reference external" href="https://github.com/dirksammel">&#64;dirksammel</a>)</p></li>
+</ul>
 </section>
 <section id="security">
 <h3>Security<a class="headerlink" href="#security" title="Link to this heading"></a></h3>
@@ -181,6 +185,7 @@ and this project adheres to <a class="reference external" href="https://semver.o
 <li><p>Auditor: Incorrect query string returns an error (#598) (<a class="reference external" href="https://github.com/raghuvar-vijay">&#64;raghuvar-vijay</a>)</p></li>
 <li><p>Auditor: Return correct status code for errors during querying of records (#620) (<a class="reference external" href="https://github.com/raghuvar-vijay">&#64;raghuvar-vijay</a>)</p></li>
 <li><p>Auditor: Remove get_since.rs and clean up dead code (#624) (<a class="reference external" href="https://github.com/raghuvar-vijay">&#64;raghuvar-vijay</a>)</p></li>
+<li><p>pyauditor: Add string representation to python Record Object (#596) (<a class="reference external" href="https://github.com/raghuvar-vijay">&#64;raghuvar-vijay</a>)</p></li>
 <li><p>CI: Added new workflow to define reusable parameters for other workflows (<a class="reference external" href="https://github.com/dirksammel">&#64;dirksammel</a>)</p></li>
 <li><p>Docs: Add versioning of GitHub Pages and pyauditor docs (#551) (<a class="reference external" href="https://github.com/QuantumDancer">&#64;QuantumDancer</a></p></li>
 <li><p>Docs: Add overview of API endpoints (#597) (<a class="reference external" href="https://github.com/QuantumDancer">&#64;QuantumDancer</a></p></li>
@@ -191,30 +196,40 @@ and this project adheres to <a class="reference external" href="https://semver.o
 <h3>Changed<a class="headerlink" href="#changed" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p>Auditor+pyauditor: Deprecate <code class="docutils literal notranslate"><span class="pre">get_started_since()</span></code> and <code class="docutils literal notranslate"><span class="pre">get_stopped_since()</span></code> functions (<a class="reference external" href="https://github.com/raghuvar-vijay">&#64;raghuvar-vijay</a>)</p></li>
+<li><p>Auditor: Restructure <code class="docutils literal notranslate"><span class="pre">/record</span></code> endpoint to handle single record operations and <code class="docutils literal notranslate"><span class="pre">/records</span></code> endpoint to handle multiple records operations (#629) (<a class="reference external" href="https://github.com/raghuvar-vijay">&#64;raghuvar-vijay</a>)</p></li>
+<li><p>Auditor: Incorrect meta and component query returns an empty vector and implement more edge case testing for advanced queries (#638) (<a class="reference external" href="https://github.com/raghuvar-vijay">&#64;raghuvar-vijay</a>)</p></li>
+<li><p>Auditor: Implement prepared SQL queries using push_bind for advanced filtering (#637) (<a class="reference external" href="https://github.com/raghuvar-vijay">&#64;raghuvar-vijay</a>)</p></li>
 <li><p>Dependencies: Update actions/setup-python from 4 to 5 (<a class="reference external" href="https://github.com/dirksammel">&#64;dirksammel</a>)</p></li>
 <li><p>Dependencies: Update actions/download-artifact from 3 to 4 (<a class="reference external" href="https://github.com/dirksammel">&#64;dirksammel</a>)</p></li>
 <li><p>Dependencies: Update actions/upload-artifact from 3 to 4 (<a class="reference external" href="https://github.com/dirksammel">&#64;dirksammel</a>)</p></li>
 <li><p>Dependencies: Update actix-web from 4.4.0 to 4.4.1 (<a class="reference external" href="https://github.com/QuantumDancer">&#64;QuantumDancer</a>)</p></li>
 <li><p>Dependencies: Update anyhow from 1.0.75 to 1.0.79 (<a class="reference external" href="https://github.com/QuantumDancer">&#64;QuantumDancer</a>)</p></li>
-<li><p>Dependencies: Update cryptography from 41.0.5 to 41.0.7 (<a class="reference external" href="https://github.com/dirksammel">&#64;dirksammel</a>)</p></li>
+<li><p>Dependencies: Update chrono from 0.4.31 to 0.4.33 (<a class="reference external" href="https://github.com/QuantumDancer">&#64;QuantumDancer</a>)</p></li>
+<li><p>Dependencies: Update cryptography from 41.0.5 to 42.0.0 (<a class="reference external" href="https://github.com/dirksammel">&#64;dirksammel</a>)</p></li>
 <li><p>Dependencies: Update fake from 2.9.1 to 2.9.2 (<a class="reference external" href="https://github.com/QuantumDancer">&#64;QuantumDancer</a>)</p></li>
+<li><p>Dependencies: Update h2 from 0.3.22 to 0.3.24 (<a class="reference external" href="https://github.com/raghuvar-vijay">&#64;raghuvar-vijay</a>)</p></li>
+<li><p>Dependencies: Update itertools from 0.12.0 to 0.12.1 (<a class="reference external" href="https://github.com/QuantumDancer">&#64;QuantumDancer</a>)</p></li>
 <li><p>Dependencies: Update once_cell from 1.18.0 to 1.19.0 (<a class="reference external" href="https://github.com/QuantumDancer">&#64;QuantumDancer</a>)</p></li>
 <li><p>Dependencies: Update opentelemetry_sdk from 0.21.1 to 0.21.2 (<a class="reference external" href="https://github.com/QuantumDancer">&#64;QuantumDancer</a>)</p></li>
-<li><p>Dependencies: Update pytest from 7.4.3 to 7.4.4 (<a class="reference external" href="https://github.com/dirksammel">&#64;dirksammel</a>)</p></li>
+<li><p>Dependencies: Update pytest from 7.4.3 to 8.0.0 (<a class="reference external" href="https://github.com/dirksammel">&#64;dirksammel</a>)</p></li>
+<li><p>Dependencies: Update regex from 1.10.2 to 1.10.3 (<a class="reference external" href="https://github.com/QuantumDancer">&#64;QuantumDancer</a>)</p></li>
 <li><p>Dependencies: Update reqwest from 0.11.22 to 0.11.23 (<a class="reference external" href="https://github.com/QuantumDancer">&#64;QuantumDancer</a>)</p></li>
-<li><p>Dependencies: Update serde from 1.0.193 to 1.0.195 (<a class="reference external" href="https://github.com/QuantumDancer">&#64;QuantumDancer</a>)</p></li>
+<li><p>Dependencies: Update serde from 1.0.193 to 1.0.196 (<a class="reference external" href="https://github.com/QuantumDancer">&#64;QuantumDancer</a>)</p></li>
 <li><p>Dependencies: Update serde-aux from 4.2.0 to 4.4.0 (<a class="reference external" href="https://github.com/QuantumDancer">&#64;QuantumDancer</a>)</p></li>
-<li><p>Dependencies: Update serde_json from 1.0.108 to 1.0.111 (<a class="reference external" href="https://github.com/QuantumDancer">&#64;QuantumDancer</a>)</p></li>
+<li><p>Dependencies: Update serde_json from 1.0.108 to 1.0.113 (<a class="reference external" href="https://github.com/QuantumDancer">&#64;QuantumDancer</a>)</p></li>
 <li><p>Dependencies: Update serde_qs from 0.11.0 to 0.12.0 (<a class="reference external" href="https://github.com/QuantumDancer">&#64;QuantumDancer</a></p></li>
+<li><p>Dependencies: Update serde_with from 3.4.0 to 3.6.0 (<a class="reference external" href="https://github.com/QuantumDancer">&#64;QuantumDancer</a>)</p></li>
 <li><p>Dependencies: Update setuptools from 69.0.2 to 69.0.3 (<a class="reference external" href="https://github.com/dirksammel">&#64;dirksammel</a>)</p></li>
 <li><p>Dependencies: Update sqlx from 0.7.2 to 0.7.3 (<a class="reference external" href="https://github.com/QuantumDancer">&#64;QuantumDancer</a>)</p></li>
 <li><p>Dependencies: Update thiserror from 1.0.50 to 1.0.56 (<a class="reference external" href="https://github.com/QuantumDancer">&#64;QuantumDancer</a>)</p></li>
 <li><p>Dependencies: Update tokio from 1.34.0 to 1.35.1 (<a class="reference external" href="https://github.com/QuantumDancer">&#64;QuantumDancer</a>)</p></li>
+<li><p>Dependencies: Update uuid from 1.6.1 to 1.7.0 (<a class="reference external" href="https://github.com/QuantumDancer">&#64;QuantumDancer</a>)</p></li>
 <li><p>Dependencies: Update wiremock from 0.5.21 to 0.5.22 (<a class="reference external" href="https://github.com/QuantumDancer">&#64;QuantumDancer</a>)</p></li>
-<li><p>Dependencies: Update h2 from 0.3.22 to 0.3.24 (<a class="reference external" href="https://github.com/raghuvar-vijay">&#64;raghuvar-vijay</a>)</p></li>
 <li><p>CI: Replace unmaintained actions-rs/audit-check action with maintained one from rustsec (<a class="reference external" href="https://github.com/QuantumDancer">&#64;QuantumDancer</a>)</p></li>
 <li><p>CI: Introduce dependency between pyauditor release and release of python packages (<a class="reference external" href="https://github.com/dirksammel">&#64;dirksammel</a>)</p></li>
 <li><p>Apel plugin: Replace all URL encodings in meta fields with single-character equivalent (<a class="reference external" href="https://github.com/dirksammel">&#64;dirksammel</a>)</p></li>
+<li><p>Apel plugin: Use advanced querying for filtering records (<a class="reference external" href="https://github.com/dirksammel">&#64;dirksammel</a>)</p></li>
+<li><p>Docs: Pyauditor- Fix pyauditor tutorial for creating new records (#631) (<a class="reference external" href="https://github.com/raghuvar-vijay">&#64;raghuvar-vijay</a>)</p></li>
 </ul>
 </section>
 <section id="removed">
