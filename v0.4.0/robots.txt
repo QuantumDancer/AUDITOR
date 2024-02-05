@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+Allow: /
+Sitemap: https://quantumdancer.github.io/AUDITOR//v0.4.0/sitemap.xml
